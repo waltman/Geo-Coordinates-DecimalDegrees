@@ -1,6 +1,8 @@
 Changes
 DecimalDegrees.pm
+INSTALL
 MANIFEST
 Makefile.PL
 README
 t/1.t
+t/pod.t
