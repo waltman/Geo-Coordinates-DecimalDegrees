@@ -1,10 +1,7 @@
-# Before `make install' is performed this script should be runnable with
-# `make test'. After `make install' it should work as `perl 1.t'
-
-#########################
+# $Id$
 
 use strict;
-use Test::More tests => 37;
+use Test::More tests => 43;
 
 BEGIN { use_ok('Geo::Coordinates::DecimalDegrees') }
 
@@ -26,6 +23,13 @@ is( dms2decimal(0, 45, 45),  0.7625 );
 is( dms2decimal(1, 15, 15),  1.25416666666666667 );
 is( dms2decimal(1, 30, 30),  1.50833333333333333 );
 is( dms2decimal(1, 45, 45),  1.7625, );
+
+is( dms2decimal(0, 0),      0   );
+is( dms2decimal(1, 0),      1   );
+is( dms2decimal(-1, 0),    -1   );
+is( dms2decimal(1, 15),   1.25 );
+is( dms2decimal(1, 30),   1.5 );
+is( dms2decimal(1, 45),   1.75 );
 
 is_deeply( [decimal2dms( 0 )], [0, 0, 0]);
 is_deeply( [decimal2dms( 1 )], [1, 0, 0]);
