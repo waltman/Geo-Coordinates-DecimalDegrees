@@ -9,7 +9,7 @@ require Carp;
 
 @EXPORT = qw( decimal2dms decimal2dm dms2decimal dm2decimal );
 
-$VERSION = '0.03';
+$VERSION = '0.04';
 
 use strict;
 use warnings;
@@ -65,7 +65,9 @@ Geo::Coordinates::DecimalDegrees - convert between degrees/minutes/seconds and d
 
   use Geo::Coordinates::DecimalDegrees;
   (degrees, $minutes, $seconds) = decimal2dms($decimal_degrees);
+  (degrees, $minutes) = decimal2dm($decimal_degrees);
   $decimal_degrees = dms2decimal($degrees, $minutes, $seconds);
+  $decimal_degrees = dm2decimal($degrees, $minutes);
 
 =head1 DESCRIPTION
 

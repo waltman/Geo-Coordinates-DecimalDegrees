@@ -1,5 +1,8 @@
 Revision history for Perl extension Geo::Coordinates::DecimalDegrees.
 
+0.04  Sat 21 Jun 2003 11:44:44 AM EDT
+        Added decimal2dm and dm2decimal to SYNOPSIS
+
 0.03  Sat 21 Jun 2003 10:30:14 AM EDT
         Changed tests to avoid floating point roundoff errors on some platforms
 
