@@ -145,4 +145,8 @@ Copyright 2003 by Walt Mankowski
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 
 
+=head1 THANKS
+
+Thanks to Andy Lester for telling me about pod.t
+
 =cut
