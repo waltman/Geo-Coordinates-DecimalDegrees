@@ -9,7 +9,7 @@ require Carp;
 
 @EXPORT = qw( decimal2dms dms2decimal );
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 use strict;
 use warnings;
