@@ -1,3 +1,5 @@
+# $Id$
+
 package Geo::Coordinates::DecimalDegrees;
 
 require Exporter;
@@ -28,6 +30,8 @@ sub decimal2dms {
 sub dms2decimal {
     my ($degrees, $minutes, $seconds) = @_;
     my $decimal;
+
+    $seconds = 0 unless defined $seconds;
 
     if ($degrees >= 0) {
 	$decimal = $degrees + $minutes/60 + $seconds/3600;
@@ -82,11 +86,15 @@ If $decimal_degrees is negative, only $degrees will be negative.
 $minutes and $seconds will always be positive.
 
 =item dms2decimal($degrees, $minutes, $seconds)
+=item dms2decimal($degrees, $minutes)
 
 Converts degrees, minutes, and seconds to the equivalent number of
 decimal degrees:
 
   $decimal_degrees = dms2decimal($degrees, $minutes, $seconds);
+
+The $seconds parameter is optional.  If it's not given, dms2decimal
+will treat it as 0.
 
 If $degrees is negative, then $decimal_degrees will also be negative.
 
