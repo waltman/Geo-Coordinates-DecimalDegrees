@@ -9,7 +9,7 @@ require Carp;
 
 @EXPORT = qw( decimal2dms decimal2dm dms2decimal dm2decimal );
 
-$VERSION = '0.04';
+$VERSION = '0.05';
 
 use strict;
 use warnings;
@@ -19,10 +19,10 @@ sub decimal2dms {
 
     my $degrees = int($decimal);
 
-    # convert decimal part to seconds
-    $decimal = abs($decimal - $degrees) * 3600;
-    my $minutes = int($decimal / 60);
-    my $seconds = $decimal - ($minutes * 60);
+    # convert decimal part to minutes
+    my $dec_min = abs($decimal - $degrees) * 60;
+    my $minutes = int($dec_min);
+    my $seconds = ($dec_min - $minutes) * 60;
 
     return ($degrees, $minutes, $seconds);
 }
@@ -150,5 +150,8 @@ it under the same terms as Perl itself.
 =head1 THANKS
 
 Thanks to Andy Lester for telling me about pod.t
+
+Thanks to Paulie Pena IV for pointing out that I could remove a
+division in decimal2dms().
 
 =cut
