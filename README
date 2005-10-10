@@ -78,3 +78,6 @@ COPYRIGHT AND LICENSE
 THANKS
     Thanks to Andy Lester for telling me about pod.t
 
+    Thanks to Paulie Pena IV for pointing out that I could remove a division
+    in decimal2dms().
+
