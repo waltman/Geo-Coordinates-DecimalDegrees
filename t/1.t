@@ -1,7 +1,7 @@
 # $Id$
 
 use strict;
-use Test::More tests => 52;
+use Test::More tests => 58;
 
 BEGIN { use_ok('Geo::Coordinates::DecimalDegrees') }
 
@@ -31,31 +31,37 @@ is( dm2decimal( 1, 15),  1.25);
 is( dm2decimal( 1, 30),  1.5);
 is( dm2decimal( 1, 45),  1.75);
 
-is_deeply( [decimal2dms(  0 )],              [ 0,  0,  0]);
-is_deeply( [decimal2dms(  1 )],              [ 1,  0,  0]);
-is_deeply( [decimal2dms( -1 )],              [-1,  0,  0]);
-is_deeply( [decimal2dms(  1.25 )],           [ 1, 15,  0]);
-is_deeply( [decimal2dms(  1.5 )],            [ 1, 30,  0]);
-is_deeply( [decimal2dms(  1.75 )],           [ 1, 45,  0]);
-is_deeply( [decimal2dms( -1.25 )],           [-1, 15,  0]);
-is_deeply( [decimal2dms( -1.5 )],            [-1, 30,  0]);
-is_deeply( [decimal2dms( -1.75 )],           [-1, 45,  0]);
-is_deeply( [decimal2dms(  0.00 + 15/3600 )], [ 0,  0, 15]);
-is_deeply( [decimal2dms(  0.00 + 30/3600 )], [ 0,  0, 30]);
-is_deeply( [decimal2dms(  0.0125 )],         [ 0,  0, 45]);
-is_deeply( [decimal2dms(  0.25 + 15/3600 )], [ 0, 15, 15]);
-is_deeply( [decimal2dms(  0.50 + 30/3600 )], [ 0, 30, 30]);
-is_deeply( [decimal2dms(  0.7625 )],         [ 0, 45, 45]);
-is_deeply( [decimal2dms(  1.25 + 15/3600 )], [ 1, 15, 15]);
-is_deeply( [decimal2dms(  1.50 + 30/3600 )], [ 1, 30, 30]);
-is_deeply( [decimal2dms(  1.7625, )],        [ 1, 45, 45]);
+is_deeply( [decimal2dms(  0 )],              [ 0,  0,  0,  0]);
+is_deeply( [decimal2dms(  1 )],              [ 1,  0,  0,  1]);
+is_deeply( [decimal2dms( -1 )],              [-1,  0,  0, -1]);
+is_deeply( [decimal2dms( -0.25 )],           [ 0, 15,  0, -1]);
+is_deeply( [decimal2dms( -0.5 )],            [ 0, 30,  0, -1]);
+is_deeply( [decimal2dms( -0.75 )],           [ 0, 45,  0, -1]);
+is_deeply( [decimal2dms(  1.25 )],           [ 1, 15,  0,  1]);
+is_deeply( [decimal2dms(  1.5 )],            [ 1, 30,  0,  1]);
+is_deeply( [decimal2dms(  1.75 )],           [ 1, 45,  0,  1]);
+is_deeply( [decimal2dms( -1.25 )],           [-1, 15,  0, -1]);
+is_deeply( [decimal2dms( -1.5 )],            [-1, 30,  0, -1]);
+is_deeply( [decimal2dms( -1.75 )],           [-1, 45,  0, -1]);
+is_deeply( [decimal2dms(  0.00 + 15/3600 )], [ 0,  0, 15,  1]);
+is_deeply( [decimal2dms(  0.00 + 30/3600 )], [ 0,  0, 30,  1]);
+is_deeply( [decimal2dms(  0.0125 )],         [ 0,  0, 45,  1]);
+is_deeply( [decimal2dms(  0.25 + 15/3600 )], [ 0, 15, 15,  1]);
+is_deeply( [decimal2dms(  0.50 + 30/3600 )], [ 0, 30, 30,  1]);
+is_deeply( [decimal2dms(  0.7625 )],         [ 0, 45, 45,  1]);
+is_deeply( [decimal2dms(  1.25 + 15/3600 )], [ 1, 15, 15,  1]);
+is_deeply( [decimal2dms(  1.50 + 30/3600 )], [ 1, 30, 30,  1]);
+is_deeply( [decimal2dms(  1.7625, )],        [ 1, 45, 45,  1]);
 
-is_deeply( [decimal2dm(  0 )],    [ 0,  0]);
-is_deeply( [decimal2dm(  1 )],    [ 1,  0]);
-is_deeply( [decimal2dm( -1 )],    [-1,  0]);
-is_deeply( [decimal2dm(  1.25 )], [ 1, 15]);
-is_deeply( [decimal2dm(  1.5 )],  [ 1, 30]);
-is_deeply( [decimal2dm(  1.75 )], [ 1, 45]);
-is_deeply( [decimal2dm( -1.25 )], [-1, 15]);
-is_deeply( [decimal2dm( -1.5 )],  [-1, 30]);
-is_deeply( [decimal2dm( -1.75 )], [-1, 45]);
+is_deeply( [decimal2dm(  0 )],    [ 0,  0,  0]);
+is_deeply( [decimal2dm(  1 )],    [ 1,  0,  1]);
+is_deeply( [decimal2dm( -1 )],    [-1,  0, -1]);
+is_deeply( [decimal2dm( -0.25 )], [ 0, 15, -1]);
+is_deeply( [decimal2dm( -0.5 )],  [ 0, 30, -1]);
+is_deeply( [decimal2dm( -0.75 )], [ 0, 45, -1]);
+is_deeply( [decimal2dm(  1.25 )], [ 1, 15,  1]);
+is_deeply( [decimal2dm(  1.5 )],  [ 1, 30,  1]);
+is_deeply( [decimal2dm(  1.75 )], [ 1, 45,  1]);
+is_deeply( [decimal2dm( -1.25 )], [-1, 15, -1]);
+is_deeply( [decimal2dm( -1.5 )],  [-1, 30, -1]);
+is_deeply( [decimal2dm( -1.75 )], [-1, 45, -1]);
