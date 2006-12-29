@@ -4,8 +4,8 @@ NAME
 
 SYNOPSIS
       use Geo::Coordinates::DecimalDegrees;
-      (degrees, $minutes, $seconds) = decimal2dms($decimal_degrees);
-      (degrees, $minutes) = decimal2dm($decimal_degrees);
+      (degrees, $minutes, $seconds, $sign) = decimal2dms($decimal_degrees);
+      (degrees, $minutes, $sign) = decimal2dm($decimal_degrees);
       $decimal_degrees = dms2decimal($degrees, $minutes, $seconds);
       $decimal_degrees = dm2decimal($degrees, $minutes);
 
@@ -33,6 +33,13 @@ FUNCTIONS
         If $decimal_degrees is negative, only $degrees will be negative.
         $minutes and $seconds will always be positive.
 
+        If $decimal_degrees is between 0 and -1, $degrees will be returned
+        as 0. If you need to know the sign in these cases, you can use this
+        longer version, where $sign is 1, 0, or -1 depending on whether
+        $decimal_degrees is positive, 0, or negative:
+
+          ($degrees, $minutes, $seconds, $sign) = decimal2dms($decimal_degrees);
+
     decimal2dm($decimal_degrees)
         Converts a floating point number of degrees to the equivalent number
         of degrees and minutes which are returned as a 2-element list.
@@ -42,6 +49,13 @@ FUNCTIONS
 
         If $decimal_degrees is negative, only $degrees will be negative.
         $minutes will always be positive.
+
+        If $decimal_degrees is between 0 and -1, $degrees will be returned
+        as 0. If you need to know the sign in these cases, you can use this
+        longer version, where $sign is 1, 0, or -1 depending on whether
+        $decimal_degrees is positive, 0, or negative:
+
+          ($degrees, $minutes, $sign) = decimal2dm($decimal_degrees);
 
     dms2decimal($degrees, $minutes, $seconds)
         Converts degrees, minutes, and seconds to the equivalent number of
@@ -80,4 +94,7 @@ THANKS
 
     Thanks to Paulie Pena IV for pointing out that I could remove a division
     in decimal2dms().
+
+    Thanks to Tim Flohrer for reporting the bug in decimal2dms() and
+    decimal2dm() when $decimal_degrees is between 0 and -1.
 
