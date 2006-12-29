@@ -1,5 +1,14 @@
 Revision history for Perl extension Geo::Coordinates::DecimalDegrees.
 
+0.06  Thu 28 Dec 2006 10:46:22 PM EST
+        Return sign of $decimal_degrees in decimal2dms() and
+        decimal2dm() to fix bug 22753
+
+        Added tests to decimal2dms() and decimal2dm() for
+        decimal_degrees between 0 and -1
+
+        Signed the module
+
 0.05  Sun 09 Oct 2005 11:27:00 PM EDT
         Removed division in decimal2dms by converting the decimal part
         to minutes instead of seconds
