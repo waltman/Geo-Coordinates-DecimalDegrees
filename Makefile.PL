@@ -6,6 +6,8 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     (MM->can('signature_target') ? (SIGN => 1) : ()),
     'NAME'		=> 'Geo::Coordinates::DecimalDegrees',
+    'LICENSE'           => 'perl',
+    'PREREQ_PM'         => { 'Test::Number::Delta' => 0 },
     'VERSION_FROM'	=> 'DecimalDegrees.pm', # finds $VERSION
     'dist'        => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
