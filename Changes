@@ -1,5 +1,10 @@
 Revision history for Perl extension Geo::Coordinates::DecimalDegrees.
 
+0.09  Tue 04 Oct 2011 10:26:05 PM EDT
+        Fixed typos in synopsis
+
+        Updated copyright to 2011
+
 0.08  Sat 12 Jan 2008 09:47:16 PM EST
         Changed tests from Test::More to Test::Number::Delta to avoid
         test failures due to floating point roundoff errors
