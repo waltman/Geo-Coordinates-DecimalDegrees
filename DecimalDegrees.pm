@@ -66,8 +66,8 @@ Geo::Coordinates::DecimalDegrees - convert between degrees/minutes/seconds and d
 =head1 SYNOPSIS
 
   use Geo::Coordinates::DecimalDegrees;
-  (degrees, $minutes, $seconds, $sign) = decimal2dms($decimal_degrees);
-  (degrees, $minutes, $sign) = decimal2dm($decimal_degrees);
+  ($degrees, $minutes, $seconds, $sign) = decimal2dms($decimal_degrees);
+  ($degrees, $minutes, $sign) = decimal2dm($decimal_degrees);
   $decimal_degrees = dms2decimal($degrees, $minutes, $seconds);
   $decimal_degrees = dm2decimal($degrees, $minutes);
 
