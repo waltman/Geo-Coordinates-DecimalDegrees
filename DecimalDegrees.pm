@@ -154,7 +154,7 @@ right ahead.
 
 =head1 AUTHOR
 
-Walt Mankowski, E<lt>waltman@cpan.orgE<gt>
+Walt Mankowski, E<lt>waltman@pobox.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
