@@ -158,10 +158,10 @@ Walt Mankowski, E<lt>waltman@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2003-2011 by Walt Mankowski
+Copyright 2003-2024 by Walt Mankowski
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself. 
+it under the same terms as Perl itself.
 
 =head1 THANKS
 
