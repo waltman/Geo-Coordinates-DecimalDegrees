@@ -1,5 +1,3 @@
-# $Id$
-
 use strict;
 use Test::Number::Delta tests => 57;
 use Geo::Coordinates::DecimalDegrees;

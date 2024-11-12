@@ -1,5 +1,3 @@
-# $Id$
-
 package Geo::Coordinates::DecimalDegrees;
 
 require Exporter;
