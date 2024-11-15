@@ -2,6 +2,9 @@ use strict;
 use Test::More tests => 57;
 use Geo::Coordinates::DecimalDegrees;
 
+# Check that all the tests in 2.t give the same results with the
+# aliased versions
+
 ok( dms2decimal( 0,  0,  0) == dms2dec( 0,  0,  0));
 ok( dms2decimal( 1,  0,  0) == dms2dec( 1,  0,  0));
 ok( dms2decimal(-1,  0,  0) == dms2dec(-1,  0,  0));
